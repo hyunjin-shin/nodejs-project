@@ -22,11 +22,11 @@ function login(){
     }).then((res) => res.json())
     .then((res) => {
         if(res.success){
-            location.href = "/"; // where is 'location' coming?
+            location.href = "/"; // where is 'location' coming? I think it is from dom(global) variable
         } else{
             alert(res.msg);
         }
     }).catch((err)=>{
-        console.error(new Error("error occured"));
+        console.error("Error Login");
     });
 }
