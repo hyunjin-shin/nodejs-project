@@ -26,7 +26,7 @@ function login(){
         } else{
             alert(res.msg);
         }
-    }).catch(err){
-        console.error("error occured");
-    };
+    }).catch((err)=>{
+        console.error(new Error("error occured"));
+    });
 }
