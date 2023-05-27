@@ -20,5 +20,13 @@ function login(){
         },
         body: JSON.stringify(req)
     }).then((res) => res.json())
-    .then(res => console.log(res));
+    .then((res) => {
+        if(res.success){
+            location.href = "/"; // where is 'location' coming?
+        } else{
+            alert(res.msg);
+        }
+    }).catch(err){
+        console.error("error occured");
+    };
 }

@@ -2,7 +2,7 @@
 
 const users = {
     id: ["jin", "hello", "canada"],
-    pwd: ["1234", "abcd", "welcom"]
+    pwd: ["1234", "abcd", "welcome"]
 };
 
 const output = {
