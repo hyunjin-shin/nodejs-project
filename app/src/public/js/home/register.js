@@ -10,11 +10,14 @@ loginBtn.addEventListener("click", register);
 
 function register(){
     event.preventDefault();
+    if(!id.value) return alert("id must not be empty");
+    if(pwd.value !== confirmPwd) return alert("passwords should be the same"); //return to where?
+    
+
     const req = {
         id : id.value,
         name : name.value,
         pwd : pwd.value,
-        confirmPwd : confirmPwd.value
     };
     console.log(req);
 
