@@ -18,7 +18,7 @@ function login(){
         headers: {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify(req)
+        body: JSON.stringify(req) // why do I need to stringify?
     }).then((res) => res.json())
     .then((res) => {
         if(res.success){
