@@ -11,7 +11,8 @@ loginBtn.addEventListener("click", register);
 function register(){
     event.preventDefault();
     if(!id.value) return alert("id must not be empty");
-    if(pwd.value !== confirmPwd) return alert("passwords should be the same"); //return to where?
+    if(pwd.value !== confirmPwd.value) return alert("passwords should be the same");
+    //return to where? I think it means just exit the function.
     
 
     const req = {

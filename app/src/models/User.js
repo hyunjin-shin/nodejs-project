@@ -7,9 +7,9 @@ class User{
         this.body = body;
     }
 
-    login(){
+    async login(){
         const client = this.body;
-        const { id, pwd } = UserStorage.getUserInfo(client.id);
+        const { id, pwd } = await UserStorage.getUserInfo(client.id);
 
         if(id){
             if( id === client.id && pwd === client.pwd){
@@ -20,9 +20,14 @@ class User{
         return {success: false, msg: "Wrong ID"};
     };
 
-    register(){
-        const response = UserStorage.save(this.body);
-        return response;
+    async register(){
+        const client = this.body;
+        try{
+            const response = await UserStorage.save(client);
+            return response;
+        } catch (err) {
+            return { success: false, msg: err};
+        }
     }
 
 }
